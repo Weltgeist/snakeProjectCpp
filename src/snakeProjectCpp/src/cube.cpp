@@ -14,6 +14,10 @@ cube::~cube()
 }
 
 void cube::move(int dirnx, int dirny){
+    this->dirnx=dirnx;
+    this->dirny=dirny;
+    this->pos[0]=this->pos[0]+this->dirnx;
+    this->pos[1]=this->pos[1]+this->dirny;
 
 }
 

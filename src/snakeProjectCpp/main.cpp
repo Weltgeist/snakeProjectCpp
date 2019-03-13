@@ -3,37 +3,9 @@
 #include <iostream>
 #include <SDL2/SDL.h>
 #include <resPath.h>
+#include "InitError.h"
 
-class InitError : public std::exception
-{
-    std::string msg;
-public:
-    InitError();
-    InitError( const std::string & );
-    virtual ~InitError() throw();
-    virtual const char * what() const throw();
-};
 
-InitError::InitError() :
-    exception(),
-    msg( SDL_GetError() )
-{
-}
-
-InitError::InitError( const std::string & m ) :
-    exception(),
-    msg( m )
-{
-}
-
-InitError::~InitError() throw()
-{
-}
-
-const char * InitError::what() const throw()
-{
-    return msg.c_str();
-}
 
 class SDL
 {

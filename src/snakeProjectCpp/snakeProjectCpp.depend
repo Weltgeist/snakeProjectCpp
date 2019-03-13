@@ -1,10 +1,11 @@
 # depslib dependency file v1.0
-1552444205 source:j:\git\software\cpp\snakeprojectcpp\src\snakeprojectcpp\main.cpp
+1552449800 source:j:\git\software\cpp\snakeprojectcpp\src\snakeprojectcpp\main.cpp
 	<exception>
 	<string>
 	<iostream>
 	<SDL2/SDL.h>
 	<resPath.h>
+	"InitError.h"
 
 1540998544 c:\extension\sdl2-mingw_32_64bit\sdl2-devel-2.0.9-mingw\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl.h
 	"SDL_main.h"
@@ -348,12 +349,13 @@
 	"begin_code.h"
 	"close_code.h"
 
-1552447712 source:j:\git\software\cpp\snakeprojectcpp\src\snakeprojectcpp\src\cube.cpp
+1552449424 source:j:\git\software\cpp\snakeprojectcpp\src\snakeprojectcpp\src\cube.cpp
 	"cube.h"
 
-1552447768 j:\git\software\cpp\snakeprojectcpp\src\snakeprojectcpp\include\cube.h
+1552448774 j:\git\software\cpp\snakeprojectcpp\src\snakeprojectcpp\include\cube.h
 	<SDL2/SDL.h>
 	<vector>
+	<constant.h>
 
 1552439676 source:j:\git\software\cpp\snakeprojectcpp\src\snakeprojectcpp\src\snake.cpp
 	"snake.h"
@@ -364,4 +366,16 @@
 	<iostream>
 	<string>
 	<SDL2/SDL.h>
+
+1552448649 j:\git\software\cpp\snakeprojectcpp\src\snakeprojectcpp\include\constant.h
+
+1552449883 j:\git\software\cpp\snakeprojectcpp\src\snakeprojectcpp\include\initerror.h
+	<exception>
+	<string>
+	<SDL2/SDL.h>
+
+1552449623 source:j:\git\software\cpp\snakeprojectcpp\src\snakeprojectcpp\src\sdlc.cpp
+	"SDLC.h"
+
+1552449623 j:\git\software\cpp\snakeprojectcpp\src\snakeprojectcpp\include\sdlc.h
 

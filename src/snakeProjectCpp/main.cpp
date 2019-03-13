@@ -6,11 +6,6 @@
 #include "InitError.h"
 #include "SDLC.h"
 
-
-
-
-
-
 int main( int argc, char * argv[] )
 {
 //// Alternative initialization

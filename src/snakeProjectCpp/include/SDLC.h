@@ -4,6 +4,7 @@
 #include <iostream>
 #include <SDL2/SDL.h>
 #include "InitError.h"
+#include "constant.h"
 
 class SDLC
 {
@@ -13,6 +14,7 @@ public:
     SDLC( Uint32 flags = 0 );
     virtual ~SDLC();
     void draw();
+    void drawGrid();
 };
 
 #endif // SDLC_H

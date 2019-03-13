@@ -3,6 +3,7 @@
 #include <SDL2/SDL.h>
 #include "SDLC.h"
 #include "InitError.h"
+#include "constant.h"
 
 SDLC::SDLC( Uint32 flags )
 {
@@ -23,10 +24,12 @@ SDLC::~SDLC()
 
 void SDLC::draw()
 {
+
     // Clear the window with a black background
     SDL_SetRenderDrawColor( m_renderer, 0, 0, 0, 255 );
     SDL_RenderClear( m_renderer );
-
+    //Draw lines, dividing the screen in a grid
+    drawGrid();
     // Show the window
     SDL_RenderPresent( m_renderer );
 
@@ -50,5 +53,18 @@ void SDLC::draw()
         SDL_RenderFillRect( m_renderer, &colorBar );
         SDL_RenderPresent( m_renderer );
         SDL_Delay( 500 );
+    }
+}
+
+void SDLC::drawGrid()
+{
+    unsigned int sizeBetween=SCREEN_WIDTH/SCREEN_ROWS;
+    unsigned int x=0;
+    unsigned int y=0;
+        for(unsigned int i=0;i<SCREEN_ROWS;i++){
+            x+=sizeBetween;
+            y+=sizeBetween;
+            SDL_RenderDrawLine( m_renderer, x, 0, x, SCREEN_WIDTH );
+            SDL_RenderDrawLine( m_renderer, 0, y, SCREEN_WIDTH, y );
     }
 }

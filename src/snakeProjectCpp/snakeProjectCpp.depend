@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1552450210 source:j:\git\software\cpp\snakeprojectcpp\src\snakeprojectcpp\main.cpp
+1552450337 source:j:\git\software\cpp\snakeprojectcpp\src\snakeprojectcpp\main.cpp
 	<exception>
 	<string>
 	<iostream>
@@ -368,21 +368,27 @@
 	<string>
 	<SDL2/SDL.h>
 
-1552448649 j:\git\software\cpp\snakeprojectcpp\src\snakeprojectcpp\include\constant.h
+1552451894 j:\git\software\cpp\snakeprojectcpp\src\snakeprojectcpp\include\constant.h
 
 1552449883 j:\git\software\cpp\snakeprojectcpp\src\snakeprojectcpp\include\initerror.h
 	<exception>
 	<string>
 	<SDL2/SDL.h>
 
-1552449623 source:j:\git\software\cpp\snakeprojectcpp\src\snakeprojectcpp\src\sdlc.cpp
+1552451851 source:j:\git\software\cpp\snakeprojectcpp\src\snakeprojectcpp\src\sdlc.cpp
+	<string>
+	<iostream>
+	<SDL2/SDL.h>
 	"SDLC.h"
+	"InitError.h"
+	"constant.h"
 
-1552450262 j:\git\software\cpp\snakeprojectcpp\src\snakeprojectcpp\include\sdlc.h
+1552451761 j:\git\software\cpp\snakeprojectcpp\src\snakeprojectcpp\include\sdlc.h
 	<string>
 	<iostream>
 	<SDL2/SDL.h>
 	"InitError.h"
+	"constant.h"
 
 1552449884 source:j:\git\software\cpp\snakeprojectcpp\src\snakeprojectcpp\src\initerror.cpp
 	<exception>

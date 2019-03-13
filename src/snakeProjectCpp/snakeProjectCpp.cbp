@@ -30,9 +30,12 @@
 		</Build>
 		<Compiler>
 			<Add option="-Wall" />
-			<Add directory="C:/Extension/SDL2-MinGW_32_64bit/SDL2-devel-2.0.9-mingw/SDL2-2.0.9/x86_64-w64-mingw32/include" />
+			<Add directory="C:/Extension/SDL2-MinGW_32_64bit/SDL2-devel-2.0.9-mingw/SDL2-2.0.9/i686-w64-mingw32/include" />
+			<Add directory="J:/Git/Software/Cpp/snakeProjectCpp/include" />
+			<Add directory="J:/Git/Software/Cpp/snakeProjectCpp/src/snakeProjectCpp/include" />
 		</Compiler>
 		<Linker>
+			<Add option="-lmingw32 -lSDL2main -lSDL2" />
 			<Add library="mingw32" />
 			<Add library="SDL2main" />
 			<Add library="SDL2.dll" />
@@ -40,12 +43,19 @@
 			<Add library="gdi32" />
 			<Add library="winmm" />
 			<Add library="dxguid" />
-			<Add directory="C:/Extension/SDL2-MinGW_32_64bit/SDL2-devel-2.0.9-mingw/SDL2-2.0.9/x86_64-w64-mingw32/lib" />
+			<Add directory="C:/Extension/SDL2-MinGW_32_64bit/SDL2-devel-2.0.9-mingw/SDL2-2.0.9/i686-w64-mingw32/lib" />
+			<Add directory="J:/Git/Software/Cpp/snakeProjectCpp/lib" />
 		</Linker>
 		<ExtraCommands>
 			<Add after="XCOPY $(#sdl2)\bin\*.dll $(TARGET_OUTPUT_DIR) /D /Y" />
 		</ExtraCommands>
+		<Unit filename="include/constant.h" />
+		<Unit filename="include/cube.h" />
+		<Unit filename="include/resPath.h" />
+		<Unit filename="include/snake.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/cube.cpp" />
+		<Unit filename="src/snake.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

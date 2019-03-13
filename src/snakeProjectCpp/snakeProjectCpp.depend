@@ -1,11 +1,12 @@
 # depslib dependency file v1.0
-1552449800 source:j:\git\software\cpp\snakeprojectcpp\src\snakeprojectcpp\main.cpp
+1552450210 source:j:\git\software\cpp\snakeprojectcpp\src\snakeprojectcpp\main.cpp
 	<exception>
 	<string>
 	<iostream>
 	<SDL2/SDL.h>
 	<resPath.h>
 	"InitError.h"
+	"SDLC.h"
 
 1540998544 c:\extension\sdl2-mingw_32_64bit\sdl2-devel-2.0.9-mingw\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl.h
 	"SDL_main.h"
@@ -377,5 +378,15 @@
 1552449623 source:j:\git\software\cpp\snakeprojectcpp\src\snakeprojectcpp\src\sdlc.cpp
 	"SDLC.h"
 
-1552449623 j:\git\software\cpp\snakeprojectcpp\src\snakeprojectcpp\include\sdlc.h
+1552450262 j:\git\software\cpp\snakeprojectcpp\src\snakeprojectcpp\include\sdlc.h
+	<string>
+	<iostream>
+	<SDL2/SDL.h>
+	"InitError.h"
+
+1552449884 source:j:\git\software\cpp\snakeprojectcpp\src\snakeprojectcpp\src\initerror.cpp
+	<exception>
+	<string>
+	<SDL2/SDL.h>
+	"InitError.h"
 

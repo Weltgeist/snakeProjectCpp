@@ -348,10 +348,12 @@
 	"begin_code.h"
 	"close_code.h"
 
-1552444111 source:j:\git\software\cpp\snakeprojectcpp\src\snakeprojectcpp\src\cube.cpp
+1552447712 source:j:\git\software\cpp\snakeprojectcpp\src\snakeprojectcpp\src\cube.cpp
 	"cube.h"
 
-1552439643 j:\git\software\cpp\snakeprojectcpp\src\snakeprojectcpp\include\cube.h
+1552447768 j:\git\software\cpp\snakeprojectcpp\src\snakeprojectcpp\include\cube.h
+	<SDL2/SDL.h>
+	<vector>
 
 1552439676 source:j:\git\software\cpp\snakeprojectcpp\src\snakeprojectcpp\src\snake.cpp
 	"snake.h"

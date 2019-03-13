@@ -10,8 +10,12 @@ SDLC::SDLC( Uint32 flags )
     if ( SDL_Init( flags ) != 0 )
         throw InitError();
 
-    if ( SDL_CreateWindowAndRenderer( 640, 480, SDL_WINDOW_SHOWN,
-                                      &m_window, &m_renderer ) != 0 )
+    //if ( SDL_CreateWindowAndRenderer( SCREEN_WIDTH, SCREEN_WIDTH, SDL_WINDOW_SHOWN, &m_window, &m_renderer ) != 0 ) //Combination of SDLCreateWindow & SDL_CreateRenderer
+    m_window =SDL_CreateWindow("Weltgeist's Snake Application",  SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
+    if ( m_window != 0 )
+        throw InitError();
+    m_renderer=SDL_CreateRenderer(m_window,-1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC );
+    if ( m_renderer != 0 )
         throw InitError();
 }
 
@@ -22,7 +26,7 @@ SDLC::~SDLC()
     SDL_Quit();
 }
 
-void SDLC::draw()
+void SDLC::draw() //redraw
 {
 
     // Clear the window with a black background
@@ -31,7 +35,7 @@ void SDLC::draw()
     //Draw lines, dividing the screen in a grid
     drawGrid();
     // Show the window
-    SDL_RenderPresent( m_renderer );
+    SDL_RenderPresent( m_renderer ); //draw function
 
     int rgb[] = { 203, 203, 203, // Gray
                   254, 254,  31, // Yellow

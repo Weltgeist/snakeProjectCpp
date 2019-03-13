@@ -363,7 +363,7 @@
 
 1552439676 j:\git\software\cpp\snakeprojectcpp\src\snakeprojectcpp\include\snake.h
 
-1552444471 j:\git\software\cpp\snakeprojectcpp\src\snakeprojectcpp\include\respath.h
+1552454834 j:\git\software\cpp\snakeprojectcpp\src\snakeprojectcpp\include\respath.h
 	<iostream>
 	<string>
 	<SDL2/SDL.h>
@@ -375,20 +375,19 @@
 	<string>
 	<SDL2/SDL.h>
 
-1552451851 source:j:\git\software\cpp\snakeprojectcpp\src\snakeprojectcpp\src\sdlc.cpp
+1552454314 source:j:\git\software\cpp\snakeprojectcpp\src\snakeprojectcpp\src\sdlc.cpp
 	<string>
 	<iostream>
 	<SDL2/SDL.h>
 	"SDLC.h"
 	"InitError.h"
 	"constant.h"
+	<resPath.h>
 
-1552451761 j:\git\software\cpp\snakeprojectcpp\src\snakeprojectcpp\include\sdlc.h
+1552454676 j:\git\software\cpp\snakeprojectcpp\src\snakeprojectcpp\include\sdlc.h
 	<string>
 	<iostream>
 	<SDL2/SDL.h>
-	"InitError.h"
-	"constant.h"
 
 1552449884 source:j:\git\software\cpp\snakeprojectcpp\src\snakeprojectcpp\src\initerror.cpp
 	<exception>

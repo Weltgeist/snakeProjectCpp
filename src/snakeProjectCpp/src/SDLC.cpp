@@ -4,6 +4,7 @@
 #include "SDLC.h"
 #include "InitError.h"
 #include "constant.h"
+#include <resPath.h>
 
 SDLC::SDLC( Uint32 flags )
 {
@@ -15,6 +16,14 @@ SDLC::SDLC( Uint32 flags )
     if ( m_window != 0 )
         throw InitError();
     m_renderer=SDL_CreateRenderer(m_window,-1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC );
+    if ( m_renderer != 0 )
+        throw InitError();
+    std::string imagePath = getResourcePath() + "ok.png";
+    m_bmp=SDL_LoadBMP(imagePath.c_str());
+    if ( m_renderer != 0 )
+        throw InitError();
+
+    m_tex=SDL_CreateTextureFromSurface(m_renderer,m_bmp );
     if ( m_renderer != 0 )
         throw InitError();
 }

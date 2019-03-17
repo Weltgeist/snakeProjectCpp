@@ -21,9 +21,55 @@ Snake::~Snake()
     //dtor
 }
 
-void Snake::move()
+bool Snake::move()
 {
-    //ctor
+
+//     //Handle events on queue
+//     while( SDL_PollEvent( &user_event ) != 0 ) { //User requests quit
+//         if( e.type == SDL_QUIT ) {
+//         quit = true;
+//         }
+//     }
+
+
+	SDL_Event event;
+    int go=true;
+    //SDL_WaitEvent(&event);
+    SDL_PollEvent(&event);
+    switch(event.type)
+    {
+        case SDL_QUIT:
+        go = false;
+        break;
+        case SDL_KEYDOWN: /* Si appui sur une touche */
+        switch (event.key.keysym.sym)
+        {
+            case SDLK_ESCAPE:
+            go = false;
+            break;
+            case SDLK_UP:
+
+            break;
+            case SDLK_DOWN:
+
+            break;
+            case SDLK_RIGHT:
+
+            break;
+            case SDLK_LEFT:
+
+            break;
+
+
+        }
+        break;
+
+
+    }
+
+    return go;
+
+
 }
 
 void Snake::reset(int pos[])

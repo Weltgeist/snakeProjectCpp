@@ -20,7 +20,7 @@ class Snake
         Snake(int pos[],SDL_Color color={0,0,0},int dirnx=0,int dirny=1);
         virtual ~Snake();
 
-        void move();
+        bool move();
         void reset(int pos[]);
         void addCube();
         void draw(SDL_Surface surface);

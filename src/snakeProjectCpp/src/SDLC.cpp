@@ -7,8 +7,8 @@
 #include "resPath.h"
 #include "snake.h"
 #include "cube.h"
-
-SDLC::SDLC( Uint32 flags )
+#include "Timer.h"
+SDLC::SDLC( unsigned int flags )
 {
     if ( SDL_Init( flags ) != 0 )
         throw InitError();
@@ -39,15 +39,22 @@ SDLC::~SDLC()
     SDL_Quit();
 }
 
-void SDLC::draw(class Snake* s,bool* flag) //redraw
+void SDLC::draw(class Snake* s,bool &flag) //redraw
 {
-    unsigned int clock = SDL_GetTicks();
-    unsigned int lastime=0;
+    class Timer clockFPS;
+    class Timer capFPS;
+    //unsigned int frameCount = 0;
+    unsigned int frameTick=0;
+    clockFPS.start();
     while(flag){
-
+            //Start cap timer
+            capFPS.start();
             SDL_Delay( 50 );
-            if (clock>lastime+100){ //10 frame per sec
-                lastime=clock;
+            frameTick=capFPS.getTicks();
+            flag=(s->move());
+            if( frameTick < SCREEN_TICKS_PER_FRAME ){
+                //Wait remaining time
+                SDL_Delay( SCREEN_TICKS_PER_FRAME - frameTick ); //SCREEN_TICKS_PER_FRAME - frameTick
             }
             redraw(s);
     }

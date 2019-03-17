@@ -33,8 +33,8 @@ int main( int argc, char * argv[] )
         SDL_Color red={255,0,0};
         int initPos[2]={10,10};
         Snake s(initPos,red);
-        bool flag(true);
-        sdl.draw(&s, &flag);
+        bool flag=true;
+        sdl.draw(&s, flag);
 
 
 

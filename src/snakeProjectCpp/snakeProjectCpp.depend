@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1552854019 source:j:\git\software\cpp\snakeprojectcpp\src\snakeprojectcpp\main.cpp
+1552863734 source:j:\git\software\cpp\snakeprojectcpp\src\snakeprojectcpp\main.cpp
 	<exception>
 	<string>
 	<iostream>
@@ -361,12 +361,12 @@
 	<vector>
 	<constant.h>
 
-1552858407 source:j:\git\software\cpp\snakeprojectcpp\src\snakeprojectcpp\src\snake.cpp
+1552859816 source:j:\git\software\cpp\snakeprojectcpp\src\snakeprojectcpp\src\snake.cpp
 	<SDL2/SDL.h>
 	"snake.h"
 	"cube.h"
 
-1552858644 j:\git\software\cpp\snakeprojectcpp\src\snakeprojectcpp\include\snake.h
+1552859551 j:\git\software\cpp\snakeprojectcpp\src\snakeprojectcpp\include\snake.h
 	<SDL2/SDL.h>
 	<list>
 	<vector>
@@ -378,14 +378,14 @@
 	<string>
 	<SDL2/SDL.h>
 
-1552787629 j:\git\software\cpp\snakeprojectcpp\src\snakeprojectcpp\include\constant.h
+1552862663 j:\git\software\cpp\snakeprojectcpp\src\snakeprojectcpp\include\constant.h
 
 1552787629 j:\git\software\cpp\snakeprojectcpp\src\snakeprojectcpp\include\initerror.h
 	<exception>
 	<string>
 	<SDL2/SDL.h>
 
-1552857481 source:j:\git\software\cpp\snakeprojectcpp\src\snakeprojectcpp\src\sdlc.cpp
+1552863691 source:j:\git\software\cpp\snakeprojectcpp\src\snakeprojectcpp\src\sdlc.cpp
 	<string>
 	<iostream>
 	<SDL2/SDL.h>
@@ -395,8 +395,9 @@
 	"resPath.h"
 	"snake.h"
 	"cube.h"
+	"Timer.h"
 
-1552855864 j:\git\software\cpp\snakeprojectcpp\src\snakeprojectcpp\include\sdlc.h
+1552863662 j:\git\software\cpp\snakeprojectcpp\src\snakeprojectcpp\include\sdlc.h
 	<string>
 	<iostream>
 	"snake.h"
@@ -414,4 +415,11 @@
 	<string>
 	<SDL2/SDL.h>
 	"resPath.h"
+
+1552862025 source:j:\git\software\cpp\snakeprojectcpp\src\snakeprojectcpp\src\timer.cpp
+	<SDL2/SDL.h>
+	"Timer.h"
+
+1552862095 j:\git\software\cpp\snakeprojectcpp\src\snakeprojectcpp\include\timer.h
+	<SDL2/SDL.h>
 

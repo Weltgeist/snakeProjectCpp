@@ -16,9 +16,9 @@ class SDLC
     //std::string m_imgPath;//image path from res
 
 public:
-    SDLC( Uint32 flags = 0 );
+    SDLC( unsigned int flags = 0 );
     virtual ~SDLC();
-    void draw(class Snake* s ,bool* flag);
+    void draw(class Snake* s ,bool &flag);
     void redraw(class Snake* s);
     void drawGrid();
 };

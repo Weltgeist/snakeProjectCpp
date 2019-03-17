@@ -34,7 +34,6 @@ class cube
 
 };
 
-int cube::rows=SCREEN_ROWS;
-int cube::w=SCREEN_WIDTH;
+
 
 #endif // CUBE_H

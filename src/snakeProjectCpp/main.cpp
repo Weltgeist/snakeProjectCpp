@@ -5,6 +5,14 @@
 #include <resPath.h>
 #include "InitError.h"
 #include "SDLC.h"
+#include "snake.h"
+#include "cube.h"
+
+using namespace std;
+
+void messageBox(string subject, string content);
+
+void randomSnack(int rows, snake s);
 
 int main( int argc, char * argv[] )
 {
@@ -34,4 +42,12 @@ int main( int argc, char * argv[] )
     }
 
     return 1;
+}
+
+void messageBox(string subject, string content){
+
+}
+
+void randomSnack(int rows, snake s){
+
 }

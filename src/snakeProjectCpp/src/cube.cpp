@@ -1,5 +1,8 @@
 #include "cube.h"
 
+int cube::rows=SCREEN_ROWS;
+int cube::w=SCREEN_WIDTH;
+
 cube::cube(int start[], int dirnx,int dirny, SDL_Color color):dirnx(1),dirny(0),color(color)
 {
     for(int i=0;i<2;i++){

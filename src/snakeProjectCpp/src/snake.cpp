@@ -1,19 +1,19 @@
 #include <SDL2/SDL.h>
 #include "snake.h"
+#include "cube.h"
 
 Snake::Snake()
 {
-        pos[0]=25;
-        pos[1]=25;
         color={255,0,0};
 
 }
 
-Snake::Snake(int pos[],SDL_Color color):color(color)
+Snake::Snake(int pos[],SDL_Color color,int dirnx,int dirny):color(color),dirnx(dirnx),dirny(dirny)
 {
-        for(int i=0;i<2;i++){
-        this->pos[i]=pos[i];
-    }
+
+        head= new Cube(pos);
+        body.push_back(head);
+
 }
 
 Snake::~Snake()

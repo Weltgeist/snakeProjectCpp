@@ -13,6 +13,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
+					<Add directory="include" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -22,6 +23,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
+					<Add directory="include" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -49,12 +51,17 @@
 		<ExtraCommands>
 			<Add after="XCOPY $(#sdl2)\bin\*.dll $(TARGET_OUTPUT_DIR) /D /Y" />
 		</ExtraCommands>
+		<Unit filename="include/InitError.h" />
+		<Unit filename="include/SDLC.h" />
 		<Unit filename="include/constant.h" />
 		<Unit filename="include/cube.h" />
 		<Unit filename="include/resPath.h" />
 		<Unit filename="include/snake.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/InitError.cpp" />
+		<Unit filename="src/SDLC.cpp" />
 		<Unit filename="src/cube.cpp" />
+		<Unit filename="src/resPath.cpp" />
 		<Unit filename="src/snake.cpp" />
 		<Extensions>
 			<code_completion />

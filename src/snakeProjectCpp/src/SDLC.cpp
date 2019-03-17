@@ -18,10 +18,12 @@ SDLC::SDLC( Uint32 flags )
     m_renderer=SDL_CreateRenderer(m_window,-1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC );
     if ( m_renderer != 0 )
         throw InitError();
-    std::string imagePath = getResourcePath() + "ok.png";
+    std::string imagePath = getResourcePath() + "ok.bmp";
     m_bmp=SDL_LoadBMP(imagePath.c_str());
     if ( m_renderer != 0 )
         throw InitError();
+
+    SDL_SetWindowIcon(m_window,m_bmp);
 
     m_tex=SDL_CreateTextureFromSurface(m_renderer,m_bmp );
     if ( m_renderer != 0 )
@@ -62,9 +64,9 @@ void SDLC::draw() //redraw
     // Render a new color bar every 0.5 seconds
     for ( int i = 0; i != sizeof rgb / sizeof *rgb; i += 3, colorBar.x += 90 )
     {
-        SDL_SetRenderDrawColor( m_renderer, rgb[i], rgb[i + 1], rgb[i + 2], 255 );
-        SDL_RenderFillRect( m_renderer, &colorBar );
-        SDL_RenderPresent( m_renderer );
+        //SDL_SetRenderDrawColor( m_renderer, rgb[i], rgb[i + 1], rgb[i + 2], 255 );
+        //SDL_RenderFillRect( m_renderer, &colorBar );
+        //SDL_RenderPresent( m_renderer );
         SDL_Delay( 500 );
     }
 }

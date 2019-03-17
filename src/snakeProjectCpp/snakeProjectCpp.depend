@@ -1,14 +1,14 @@
 # depslib dependency file v1.0
-1552849014 source:j:\git\software\cpp\snakeprojectcpp\src\snakeprojectcpp\main.cpp
+1552854019 source:j:\git\software\cpp\snakeprojectcpp\src\snakeprojectcpp\main.cpp
 	<exception>
 	<string>
 	<iostream>
 	<SDL2/SDL.h>
 	<resPath.h>
 	"InitError.h"
-	"SDLC.h"
 	"snake.h"
 	"cube.h"
+	"SDLC.h"
 
 1540998544 c:\extension\sdl2-mingw_32_64bit\sdl2-devel-2.0.9-mingw\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl.h
 	"SDL_main.h"
@@ -352,18 +352,20 @@
 	"begin_code.h"
 	"close_code.h"
 
-1552787629 source:j:\git\software\cpp\snakeprojectcpp\src\snakeprojectcpp\src\cube.cpp
+1552853137 source:j:\git\software\cpp\snakeprojectcpp\src\snakeprojectcpp\src\cube.cpp
+	<SDL2/SDL.h>
 	"cube.h"
 
-1552849247 j:\git\software\cpp\snakeprojectcpp\src\snakeprojectcpp\include\cube.h
+1552852005 j:\git\software\cpp\snakeprojectcpp\src\snakeprojectcpp\include\cube.h
 	<SDL2/SDL.h>
 	<vector>
 	<constant.h>
 
-1552848169 source:j:\git\software\cpp\snakeprojectcpp\src\snakeprojectcpp\src\snake.cpp
+1552853920 source:j:\git\software\cpp\snakeprojectcpp\src\snakeprojectcpp\src\snake.cpp
+	<SDL2/SDL.h>
 	"snake.h"
 
-1552848133 j:\git\software\cpp\snakeprojectcpp\src\snakeprojectcpp\include\snake.h
+1552853661 j:\git\software\cpp\snakeprojectcpp\src\snakeprojectcpp\include\snake.h
 	<SDL2/SDL.h>
 	"SDLC.h"
 
@@ -379,18 +381,22 @@
 	<string>
 	<SDL2/SDL.h>
 
-1552848398 source:j:\git\software\cpp\snakeprojectcpp\src\snakeprojectcpp\src\sdlc.cpp
+1552857013 source:j:\git\software\cpp\snakeprojectcpp\src\snakeprojectcpp\src\sdlc.cpp
 	<string>
 	<iostream>
 	<SDL2/SDL.h>
 	"SDLC.h"
 	"InitError.h"
 	"constant.h"
-	<resPath.h>
+	"resPath.h"
+	"snake.h"
+	"cube.h"
 
-1552787629 j:\git\software\cpp\snakeprojectcpp\src\snakeprojectcpp\include\sdlc.h
+1552855864 j:\git\software\cpp\snakeprojectcpp\src\snakeprojectcpp\include\sdlc.h
 	<string>
 	<iostream>
+	"snake.h"
+	"cube.h"
 	<SDL2/SDL.h>
 
 1552787629 source:j:\git\software\cpp\snakeprojectcpp\src\snakeprojectcpp\src\initerror.cpp
@@ -399,9 +405,9 @@
 	<SDL2/SDL.h>
 	"InitError.h"
 
-1552787629 source:j:\git\software\cpp\snakeprojectcpp\src\snakeprojectcpp\src\respath.cpp
+1552852628 source:j:\git\software\cpp\snakeprojectcpp\src\snakeprojectcpp\src\respath.cpp
 	<iostream>
 	<string>
 	<SDL2/SDL.h>
-	<resPath.h>
+	"resPath.h"
 

@@ -1,31 +1,42 @@
+#include <SDL2/SDL.h>
 #include "snake.h"
 
-snake::snake(int pos[],SDL_Color color)
+Snake::Snake()
 {
-    //ctor
+        pos[0]=25;
+        pos[1]=25;
+        color={255,0,0};
+
 }
 
-snake::~snake()
+Snake::Snake(int pos[],SDL_Color color):color(color)
+{
+        for(int i=0;i<2;i++){
+        this->pos[i]=pos[i];
+    }
+}
+
+Snake::~Snake()
 {
     //dtor
 }
 
-void snake::move()
+void Snake::move()
 {
     //ctor
 }
 
-void snake::reset(int pos[])
+void Snake::reset(int pos[])
 {
     //ctor
 }
 
-void snake::addCube()
+void Snake::addCube()
 {
     //ctor
 }
 
-void snake::draw(SDL_Surface surface)
+void Snake::draw(SDL_Surface surface)
 {
     //ctor
 }

@@ -3,11 +3,16 @@
 #include <SDL2/SDL.h>
 #include "SDLC.h"
 
-class snake
+class Snake
 {
+    private:
+
+        int pos[2];
+        SDL_Color color;
     public:
-        snake(int pos[],SDL_Color color={0,0,0});
-        virtual ~snake();
+        Snake();
+        Snake(int pos[],SDL_Color color={0,0,0});
+        virtual ~Snake();
 
         void move();
         void reset(int pos[]);
@@ -16,7 +21,7 @@ class snake
 
     protected:
 
-    private:
+
 };
 
 #endif // SNAKE_H

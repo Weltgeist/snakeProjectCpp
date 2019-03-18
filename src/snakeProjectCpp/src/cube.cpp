@@ -29,7 +29,7 @@ void Cube::move(int dirnx, int dirny){
 
 }
 
-void Cube::draw(SDL_Surface surface, bool eyes,int rows,int w){
+void Cube::draw(SDL_Surface surface, bool eyes){
     //int dis=w/rows;
    // int i=pos[0];
     //int j=pos[1];

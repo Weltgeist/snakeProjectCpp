@@ -127,7 +127,24 @@ void Snake::addCube()
 
 void Snake::draw(SDL_Surface surface)
 {
-    //ctor
+            for(unsigned int i=0;i<body.size();i++){
+                if (i==0){
+                    body[i]->draw(surface,true); //true to add eyes
+                }
+                else{
+                    body[i]->draw(surface,false);
+                }
+
+
+
+            }
+
+
+
+
+
+
+
 }
 
 

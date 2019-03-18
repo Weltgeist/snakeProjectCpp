@@ -26,7 +26,7 @@ class Cube
         virtual ~Cube();
 
         void move(int dirnx, int dirny);
-        void draw(SDL_Surface surface, bool eyes,int rows,int w);
+        void draw(SDL_Surface surface, bool eyes);
 
         std::vector<int> getPos()const{
             return pos;

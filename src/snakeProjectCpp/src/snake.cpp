@@ -125,7 +125,7 @@ void Snake::addCube()
     //ctor
 }
 
-void Snake::draw(SDL_Surface surface)
+void Snake::draw(SDL_Renderer* surface)
 {
             for(unsigned int i=0;i<body.size();i++){
                 if (i==0){

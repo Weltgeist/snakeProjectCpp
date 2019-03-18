@@ -24,7 +24,7 @@ class Snake
         bool move();
         void reset(int pos[]);
         void addCube();
-        void draw(SDL_Surface surface);
+        void draw(SDL_Renderer* surface);
 
     protected:
 

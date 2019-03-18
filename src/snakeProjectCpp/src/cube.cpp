@@ -29,9 +29,13 @@ void Cube::move(int dirnx, int dirny){
 
 }
 
-void Cube::draw(SDL_Surface surface, bool eyes){
-    //int dis=w/rows;
-   // int i=pos[0];
-    //int j=pos[1];
+void Cube::draw(SDL_Renderer* surface, bool eyes){
+    int dis=SCREEN_WIDTH/SCREEN_ROWS;
+    int i=pos[0];
+    int j=pos[1];
+   // SDL_Rect()
+    //SDL_RenderDrawRect(SDL_Renderer*   renderer,
+                      // const SDL_Rect* rect)
+
 
 }

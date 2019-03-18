@@ -53,6 +53,7 @@
 		</ExtraCommands>
 		<Unit filename="include/InitError.h" />
 		<Unit filename="include/SDLC.h" />
+		<Unit filename="include/Timer.h" />
 		<Unit filename="include/constant.h" />
 		<Unit filename="include/cube.h" />
 		<Unit filename="include/resPath.h" />
@@ -60,6 +61,7 @@
 		<Unit filename="main.cpp" />
 		<Unit filename="src/InitError.cpp" />
 		<Unit filename="src/SDLC.cpp" />
+		<Unit filename="src/Timer.cpp" />
 		<Unit filename="src/cube.cpp" />
 		<Unit filename="src/resPath.cpp" />
 		<Unit filename="src/snake.cpp" />

@@ -1,7 +1,9 @@
 #include <iostream>
 #include <string>
 #include <SDL2/SDL.h>
-#include <resPath.h>
+#include "resPath.h"
+
+using namespace std;
 
 std::string getResourcePath(const std::string &subDir){
 	//We need to choose the path separator properly based on which

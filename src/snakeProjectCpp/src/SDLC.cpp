@@ -4,9 +4,14 @@
 #include "SDLC.h"
 #include "InitError.h"
 #include "constant.h"
-#include <resPath.h>
+#include "resPath.h"
+#include "snake.h"
+#include "cube.h"
+#include "Timer.h"
 
-SDLC::SDLC( Uint32 flags )
+using namespace std;
+
+SDLC::SDLC( unsigned int flags )
 {
     if ( SDL_Init( flags ) != 0 )
         throw InitError();
@@ -37,38 +42,64 @@ SDLC::~SDLC()
     SDL_Quit();
 }
 
-void SDLC::draw() //redraw
+void SDLC::draw(class Snake* s,bool &flag) //redraw
 {
-
-    // Clear the window with a black background
-    SDL_SetRenderDrawColor( m_renderer, 0, 0, 0, 255 );
-    SDL_RenderClear( m_renderer );
-    //Draw lines, dividing the screen in a grid
-    drawGrid();
-    // Show the window
-    SDL_RenderPresent( m_renderer ); //draw function
-
-    int rgb[] = { 203, 203, 203, // Gray
-                  254, 254,  31, // Yellow
-                    0, 255, 255, // Cyan
-                    0, 254,  30, // Green
-                  255,  16, 253, // Magenta
-                  253,   3,   2, // Red
-                   18,  14, 252, // Blue
-                    0,   0,   0  // Black
-                };
-
-    SDL_Rect colorBar;
-    colorBar.x = 0; colorBar.y = 0; colorBar.w = 90; colorBar.h = 480;
-
-    // Render a new color bar every 0.5 seconds
-    for ( int i = 0; i != sizeof rgb / sizeof *rgb; i += 3, colorBar.x += 90 )
-    {
-        //SDL_SetRenderDrawColor( m_renderer, rgb[i], rgb[i + 1], rgb[i + 2], 255 );
-        //SDL_RenderFillRect( m_renderer, &colorBar );
-        SDL_RenderPresent( m_renderer );
-        SDL_Delay( 500 );
+    class Timer clockFPS;
+    class Timer capFPS;
+    //unsigned int frameCount = 0;
+    unsigned int frameTick=0;
+    clockFPS.start();
+    while(flag){
+            //Start cap timer
+            capFPS.start();
+            SDL_Delay( 50 );
+            frameTick=capFPS.getTicks();
+            flag=(s->move());
+            if( frameTick < SCREEN_TICKS_PER_FRAME ){
+                //Wait remaining time
+                SDL_Delay( SCREEN_TICKS_PER_FRAME - frameTick ); //SCREEN_TICKS_PER_FRAME - frameTick
+            }
+            redraw(s);
     }
+}
+
+void SDLC::redraw(class Snake* s){
+
+        //J:\Git\Software\Cpp\snakeProjectCpp\src\snakeProjectCpp\include\cube.h
+        //Clear the window with a black background
+        SDL_SetRenderDrawColor( m_renderer, 0, 0, 0, 255 );
+        SDL_RenderClear( m_renderer );
+        //Draw lines, dividing the screen in a grid
+        drawGrid();
+        //Draw snake;
+        s->draw( m_renderer );
+
+        // Show the window
+        SDL_RenderPresent( m_renderer ); //draw function
+
+    //    int rgb[] = { 203, 203, 203, // Gray
+    //                  254, 254,  31, // Yellow
+    //                    0, 255, 255, // Cyan
+    //                    0, 254,  30, // Green
+    //                  255,  16, 253, // Magenta
+    //                  253,   3,   2, // Red
+    //                   18,  14, 252, // Blue
+    //                    0,   0,   0  // Black
+    //                };
+
+    //    SDL_Rect colorBar;
+    //    colorBar.x = 0; colorBar.y = 0; colorBar.w = 90; colorBar.h = 480;
+
+        // Render a new color bar every 0.5 seconds
+       // for ( int i = 0; i != sizeof rgb / sizeof *rgb; i += 3, colorBar.x += 90 )
+       // {
+            //SDL_SetRenderDrawColor( m_renderer, rgb[i], rgb[i + 1], rgb[i + 2], 255 );
+            //SDL_RenderFillRect( m_renderer, &colorBar );
+            //SDL_RenderPresent( m_renderer );
+            //SDL_Delay( 500 );
+       // }
+
+
 
 }
 

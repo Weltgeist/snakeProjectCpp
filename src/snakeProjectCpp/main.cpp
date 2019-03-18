@@ -4,7 +4,15 @@
 #include <SDL2/SDL.h>
 #include <resPath.h>
 #include "InitError.h"
+#include "snake.h"
+#include "cube.h"
 #include "SDLC.h"
+
+using namespace std;
+
+void messageBox(string subject, string content);
+
+void randomSnack(int rows, Snake s);
 
 int main( int argc, char * argv[] )
 {
@@ -22,7 +30,13 @@ int main( int argc, char * argv[] )
     {
         SDLC sdl( SDL_INIT_VIDEO | SDL_INIT_TIMER ); //SDL INIT
         std::cout << "Resource path is: " << getResourcePath() << std::endl;
-        sdl.draw();
+        SDL_Color red={255,0,0};
+        int initPos[2]={10,10};
+        Snake s(initPos,red);
+        bool flag=true;
+        sdl.draw(&s, flag);
+
+
 
         return 0;
     }
@@ -34,4 +48,12 @@ int main( int argc, char * argv[] )
     }
 
     return 1;
+}
+
+void messageBox(string subject, string content){
+
+}
+
+void randomSnack(int rows, Snake s){
+
 }

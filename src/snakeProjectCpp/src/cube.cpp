@@ -41,7 +41,6 @@ void Cube::draw(SDL_Renderer* surface, bool eyes){
     SDL_SetRenderDrawColor(surface,color.r,color.g,color.b,255);
 
     SDL_Rect rect;
-    SDL_
     rect.x=i*dis+1;
     rect.y=j*dis+1;
     rect.w=dis-2;

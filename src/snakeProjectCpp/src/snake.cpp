@@ -44,19 +44,30 @@ bool Snake::move()
         case SDL_KEYDOWN: /* Si appui sur une touche */
         switch (event.key.keysym.sym)
         {
+            //std::vector<int> t;
+            //std::copy (this->head->getPos(),this->head->getPos()+2,std::back_inserter(t));
             case SDLK_ESCAPE:
-            go = false;
+                go = false;
             break;
             case SDLK_UP:
-
+                this->dirnx=0;
+                this->dirny=1;
+                this->turns[this->head->getPos()]={this->dirnx,this->dirny}; //MAPS vector to another vector
             break;
             case SDLK_DOWN:
-
+                this->dirnx=0;
+                this->dirny=-1;
+                this->turns[this->head->getPos()]={this->dirnx,this->dirny}; //MAPS vector to another vector
             break;
             case SDLK_RIGHT:
-
+                this->dirnx=1;
+                this->dirny=0;
+                this->turns[this->head->getPos()]={this->dirnx,this->dirny}; //MAPS vector to another vector
             break;
             case SDLK_LEFT:
+                this->dirnx=-1;
+                this->dirny=0;
+                this->turns[this->head->getPos()]={this->dirnx,this->dirny}; //MAPS vector to another vector
 
             break;
 
@@ -64,6 +75,10 @@ bool Snake::move()
         }
         break;
 
+
+    }
+
+    for(std::vector<Cube*>::iterator it = this->body.begin();it != this->body.end(); ++it){ //iterator, like a for loop in python
 
     }
 

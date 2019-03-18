@@ -3,6 +3,7 @@
 #include <SDL2/SDL.h>
 #include <list>
 #include <vector>
+#include <map>
 #include "cube.h"
 #include "SDLC.h"
 
@@ -11,7 +12,7 @@ class Snake
     private:
         std::vector<class Cube*> body;
         class Cube* head;
-        int turns[2];
+        std::map<std::vector<int>,std::vector<int>>  turns;
         SDL_Color color;
         int dirnx;
         int dirny;

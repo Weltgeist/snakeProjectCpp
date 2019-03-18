@@ -10,6 +10,7 @@ Cube::Cube(int start[], int dirnx,int dirny, SDL_Color color):dirnx(1),dirny(0),
     for(int i=0;i<2;i++){
         pos[i]=start[i];
     }
+
     //ctor
 }
 

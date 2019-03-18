@@ -1,6 +1,8 @@
 #include <SDL2/SDL.h>
 #include "cube.h"
 
+using namespace std;
+
 
 int Cube::rows=SCREEN_ROWS;
 int Cube::w=SCREEN_WIDTH;

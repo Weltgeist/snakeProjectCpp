@@ -27,10 +27,31 @@ class Cube
 
         void move(int dirnx, int dirny);
         void draw(SDL_Surface surface, bool eyes,int rows,int w);
+
         std::vector<int> getPos()const{
             return pos;
         }
+        int getDirnx()const{
+            return dirnx;
+        }
+        int getDirny()const{
+            return dirny;
+        }
 
+        void setPos(std::vector<int> pos){
+            this->pos=pos;
+            return;
+        }
+
+        void setDirnx(int dirnx){
+            this->dirnx=dirnx;
+            return;
+        }
+
+        void setDirny(int dirny){
+            this->dirny=dirny;
+            return;
+        }
     protected:
 
 

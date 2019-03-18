@@ -3,6 +3,7 @@
 #include <SDL2/SDL.h>
 #include "InitError.h"
 
+using namespace std;
 
 InitError::InitError() :
     exception(),

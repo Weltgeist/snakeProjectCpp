@@ -8,6 +8,9 @@
 #include "snake.h"
 #include "cube.h"
 #include "Timer.h"
+
+using namespace std;
+
 SDLC::SDLC( unsigned int flags )
 {
     if ( SDL_Init( flags ) != 0 )

@@ -1,6 +1,11 @@
 #include <SDL2/SDL.h>
 #include "snake.h"
 #include "cube.h"
+#include <list>
+#include <vector>
+#include <map>
+
+using namespace std;
 
 Snake::Snake()
 {
@@ -23,7 +28,8 @@ Snake::~Snake()
 
 bool Snake::move()
 {
-
+std::vector<int> p;
+std::vector<int> turn;
 //     //Handle events on queue
 //     while( SDL_PollEvent( &user_event ) != 0 ) { //User requests quit
 //         if( e.type == SDL_QUIT ) {
@@ -76,9 +82,31 @@ bool Snake::move()
         break;
 
 
-    }
 
-    for(std::vector<Cube*>::iterator it = this->body.begin();it != this->body.end(); ++it){ //iterator, like a for loop in python
+
+    //for(std::vector<Cube*>::iterator it = this->body.begin();it != this->body.end(); ++it){ //iterator, like a for loop in python
+        for(unsigned int i=0;i<body.size();i++){
+            p=body[i]->getPos(); //get position of cube object
+            if(turns.find(p)!=turns.end()){ // if p is in the turns OR turns.count(p)
+                    turn=turns[p];
+                    body[i]->move(turn[0],turn[1]);
+                    if(i==body.size()-1){
+                        turns.erase(p);
+                        } //if we are on last cube, we remove the turn
+            }
+            else{
+                if((body[i]->getDirnx())==-1 && (body[i]->getPos()[0])<=0){body[i]->setPos({SCREEN_ROWS-1,body[i]->getPos()[1]});} //check if outside of screen
+                else if((body[i]->getDirnx())==1 && (body[i]->getPos()[0])>=(int)SCREEN_ROWS-1){body[i]->setPos({0,body[i]->getPos()[1]});}
+                else if((body[i]->getDirny())==-1 && (body[i]->getPos()[1])>=(int)SCREEN_HEIGHT-1){body[i]->setPos({body[i]->getPos()[0],SCREEN_HEIGHT-1});} //down
+                else if((body[i]->getDirny())==1 && (body[i]->getPos()[1])<=0){body[i]->setPos({body[i]->getPos()[0],0});}
+                else{body[i]->move(body[i]->getDirnx(),body[i]->getDirny());}
+
+
+
+
+            }
+
+        }
 
     }
 

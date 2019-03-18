@@ -72,7 +72,7 @@ void SDLC::redraw(class Snake* s){
         //Draw lines, dividing the screen in a grid
         drawGrid();
         //Draw snake;
-        //s->draw( );
+        s->draw( m_renderer );
 
         // Show the window
         SDL_RenderPresent( m_renderer ); //draw function

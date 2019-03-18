@@ -33,9 +33,19 @@ void Cube::draw(SDL_Renderer* surface, bool eyes){
     int dis=SCREEN_WIDTH/SCREEN_ROWS;
     int i=pos[0];
     int j=pos[1];
-   // SDL_Rect()
-    //SDL_RenderDrawRect(SDL_Renderer*   renderer,
-                      // const SDL_Rect* rect)
+
+    SDL_SetRenderDrawColor(surface,color.r,color.g,color.b,255);
+
+    SDL_Rect rect;
+    rect.x=i*dis+1;
+    rect.y=j*dis+1;
+    rect.w=dis-2;
+    rect.h=dis-2;
+
+    SDL_RenderDrawRect(surface, &rect);
+    SDL_RenderFillRect(surface, &rect);
+
+
 
 
 }

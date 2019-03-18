@@ -13,7 +13,7 @@ class Cube
         std::vector<int> pos{0,0};
         int dirnx=1;
         int dirny=0;
-        SDL_Color color={0,0,0};
+        SDL_Color color={255,0,0};
 
     public:
 
@@ -22,7 +22,7 @@ class Cube
 
 
     public:
-        Cube(int start[],int dirnx=1,int dirny=0, SDL_Color color={0,0,0});
+        Cube(int start[],int dirnx=1,int dirny=0, SDL_Color color={255,0,0});
         virtual ~Cube();
 
         void move(int dirnx, int dirny);

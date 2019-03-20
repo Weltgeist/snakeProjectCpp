@@ -1,6 +1,7 @@
 #include <SDL2/SDL.h>
 #include "snake.h"
 #include "cube.h"
+#include <iostream>
 #include <list>
 #include <vector>
 #include <map>
@@ -74,14 +75,13 @@ std::vector<int> turn;
                 this->dirnx=-1;
                 this->dirny=0;
                 this->turns[this->head->getPos()]={this->dirnx,this->dirny}; //MAPS vector to another vector
-
             break;
 
 
         }
+        break;
 
-
-
+    }
 
 
     //for(std::vector<Cube*>::iterator it = this->body.begin();it != this->body.end(); ++it){ //iterator, like a for loop in python
@@ -89,19 +89,35 @@ std::vector<int> turn;
         i=0;
         for( i=0;i<body.size();i++){
             p=body[i]->getPos(); //get position of cube object
+                cout<<"Move 0"<<endl;
             if(turns.find(p)!=turns.end()){ // if p is in the turns OR turns.count(p)
                     turn=turns[p];
                     body[i]->move(turn[0],turn[1]);
+                     cout<<"Move 1"<<endl;
+            for( std::map<std::vector<int>,std::vector<int>> ::const_iterator it = turns.cbegin(); it != turns.cend(); ++it)
+                {
+                    std::cout << it->first[0] << " "<< it->first[1] << " " << it->second[0]<< " " << it->second[1]<< "\n";
+                }
+
                     if(i==body.size()-1){
                         turns.erase(p);
+                        //cout<<"Cond?"<<endl;
                         } //if we are on last cube, we remove the turn
-            }
+       }
             else{
-                if(((body[i]->getDirnx())==-1) && (body[i]->getPos()[0])<=0){body[i]->setPos({10,10});} //check if outside of screen
+                if(((body[i]->getDirnx())==-1) && (body[i]->getPos()[0])<=0){body[i]->setPos({SCREEN_ROWS-1,body[i]->getPos()[1]});} //check if outside of screen
                 else if(((body[i]->getDirnx())==1 )&& (body[i]->getPos()[0])>=(int)SCREEN_ROWS-1){body[i]->setPos({0,body[i]->getPos()[1]});}
-                else if(((body[i]->getDirny())==1 ) && (body[i]->getPos()[1])>=(int)SCREEN_HEIGHT-1){body[i]->setPos({body[i]->getPos()[0],0});} //down
-                else if(((body[i]->getDirny())==-1 )&& (body[i]->getPos()[1])<=0){body[i]->setPos({body[i]->getPos()[0],SCREEN_HEIGHT-1});}
+                else if(((body[i]->getDirny())==-1 ) && (body[i]->getPos()[1])>=(int)SCREEN_HEIGHT-1){body[i]->setPos({body[i]->getPos()[0],0});} //down
+                else if(((body[i]->getDirny())==1 )&& (body[i]->getPos()[1])<=0){body[i]->setPos({body[i]->getPos()[0],SCREEN_HEIGHT-1});}
                 else{body[i]->move(body[i]->getDirnx(),body[i]->getDirny());}
+                body[i]->move(body[i]->getDirnx(),body[i]->getDirny());
+                cout<<"Move 2"<<endl;
+                cout<<body[i]->getDirnx()<<body[i]->getDirny()<<endl;
+            for( std::map<std::vector<int>,std::vector<int>> ::const_iterator it = turns.cbegin(); it != turns.cend(); ++it)
+                {
+                    std::cout << it->first[0] << " "<< it->first[1] << " " << it->second[0]<< " " << it->second[1]<< "\n";
+                }
+
 
 
 
@@ -110,7 +126,7 @@ std::vector<int> turn;
 
         }
 
-    }
+
 
     return go;
 

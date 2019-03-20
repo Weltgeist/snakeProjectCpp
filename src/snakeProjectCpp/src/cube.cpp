@@ -51,11 +51,22 @@ void Cube::draw(SDL_Renderer* surface, bool eyes){
 
     if(eyes){
         center=dis/2;
-        radius=3;
+        radius=4;
         c1.x=i*dis+center-radius;
         c1.y=j*dis+8;
         c2.x=i*dis+dis-radius*2;
         c2.y=j*dis+8;
+    SDL_SetRenderDrawColor(surface,255,255,255,255);
+        rect.x=c1.x-radius/2;
+        rect.y=c1.y-radius/2;
+        rect.w=radius;
+        rect.h=radius;
+    SDL_RenderDrawRect(surface, &rect);
+    SDL_RenderFillRect(surface, &rect);
+        rect.x=c2.x-radius/2;
+        rect.y=c2.y-radius/2;
+    SDL_RenderDrawRect(surface, &rect);
+    SDL_RenderFillRect(surface, &rect);
 
         //TODO 1: Draw circlers for the eyes. or squares.
     }

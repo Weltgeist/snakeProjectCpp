@@ -20,7 +20,7 @@ SDLC::SDLC( unsigned int flags )
     m_window =SDL_CreateWindow("Weltgeist's Snake Application",  SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
     if ( m_window == nullptr ) // Follow C++11 std
         throw InitError();
-    m_renderer=SDL_CreateRenderer(m_window,-1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC );
+    m_renderer=SDL_CreateRenderer(m_window,-1, SDL_RENDERER_ACCELERATED  ); //SDL_RENDERER_PRESENTVSYNC
     if ( m_renderer == nullptr )
         throw InitError();
     std::string imagePath = getResourcePath() + "ok.bmp";
@@ -48,18 +48,27 @@ void SDLC::draw(class Snake* s,bool &flag) //redraw
     class Timer capFPS;
     //unsigned int frameCount = 0;
     unsigned int frameTick=0;
+    unsigned int n=0;
     clockFPS.start();
     while(flag){
             //Start cap timer
-            capFPS.start();
+
             SDL_Delay( 50 );
-            frameTick=capFPS.getTicks();
             flag=(s->move());
-            if( frameTick < SCREEN_TICKS_PER_FRAME ){
+            n++;
+            if(n!=0){
+            frameTick=capFPS.getTicks();}
+            capFPS.start();
+            cout<<frameTick<<endl;
+            //if( frameTick < SCREEN_TICKS_PER_FRAME ){
                 //Wait remaining time
-                SDL_Delay( SCREEN_TICKS_PER_FRAME - frameTick ); //SCREEN_TICKS_PER_FRAME - frameTick
-            }
+            //    SDL_Delay( SCREEN_TICKS_PER_FRAME - frameTick ); //SCREEN_TICKS_PER_FRAME - frameTick
+             //    cout<<"cond2"<<endl;
+            //}
+            SDL_Delay( 100);
             redraw(s);
+            SDL_Delay( 100 );
+
     }
 }
 

@@ -42,7 +42,7 @@ SDLC::~SDLC()
     SDL_Quit();
 }
 
-void SDLC::draw(class Snake* s,bool &flag) //redraw
+void SDLC::draw(class Snake* s,class Cube* g,bool &flag) //redraw
 {
     class Timer clockFPS;
     class Timer capFPS;
@@ -66,13 +66,14 @@ void SDLC::draw(class Snake* s,bool &flag) //redraw
              //    cout<<"cond2"<<endl;
             //}
             SDL_Delay( 100);
-            redraw(s);
+            if((s->getBody()[0])->getPos()==g->getPos()){s->addCube();}
+            redraw(s,g);
             SDL_Delay( 100 );
 
     }
 }
 
-void SDLC::redraw(class Snake* s){
+void SDLC::redraw(class Snake* s,class Cube* g){
 
         //J:\Git\Software\Cpp\snakeProjectCpp\src\snakeProjectCpp\include\cube.h
         //Clear the window with a black background
@@ -82,6 +83,8 @@ void SDLC::redraw(class Snake* s){
         drawGrid();
         //Draw snake;
         s->draw( m_renderer );
+        g->draw( m_renderer,false);
+
 
         // Show the window
         SDL_RenderPresent( m_renderer ); //draw function

@@ -140,7 +140,35 @@ void Snake::reset(int pos[])
 
 void Snake::addCube()
 {
-    //ctor
+    Cube* tail=body.back();
+    int dx=tail->getDirnx();
+    int dy=tail->getDirny();
+    int arr[2];
+    Cube*p;
+
+    if (dx == 1 && dy == 0)
+    {arr[0]=tail->getPos()[0]-1;
+     arr[1]=tail->getPos()[1];
+        p=new Cube(arr,0,0,{255,0,0});
+            body.push_back(p);}
+    else if (dx == -1 && dy == 0)
+    {arr[0]=tail->getPos()[0]+1;
+     arr[1]=tail->getPos()[1];
+        p=new Cube(arr,0,0,{255,0,0});
+            body.push_back(p);}
+    else if (dx == 0 && dy == 1)
+    {arr[0]=tail->getPos()[0];
+     arr[1]=tail->getPos()[1]-1;
+        p=new Cube(arr,0,0,{255,0,0});
+            body.push_back(p);}
+    else if (dx == 0 && dy == -1)
+    {arr[0]=tail->getPos()[0];
+     arr[1]=tail->getPos()[1]+1;
+        p=new Cube(arr,0,0,{255,0,0});
+            body.push_back(p);}
+
+    body.back()->setDirnx(dx);
+    body.back()->setDirny(dy);
 }
 
 void Snake::draw(SDL_Renderer* surface)

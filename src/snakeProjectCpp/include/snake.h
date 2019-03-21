@@ -26,6 +26,12 @@ class Snake
         void addCube();
         void draw(SDL_Renderer* surface);
 
+        std::vector<class Cube*> getBody()const{
+            return body;
+        }
+
+
+
     protected:
 
 

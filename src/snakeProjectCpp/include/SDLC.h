@@ -18,8 +18,8 @@ class SDLC
 public:
     SDLC( unsigned int flags = 0 );
     virtual ~SDLC();
-    void draw(class Snake* s ,bool &flag);
-    void redraw(class Snake* s);
+    void draw(class Snake* s ,class Cube* g,bool &flag);
+    void redraw(class Snake* s,class Cube* g);
     void drawGrid();
 };
 
